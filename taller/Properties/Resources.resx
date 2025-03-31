@@ -124,8 +124,14 @@
   <data name="Aire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AireA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AireA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SalaR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\SalaR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CocinaOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\CocinaOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ComedorR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ComedorR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,9 +151,6 @@
   <data name="ComedorOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ComedorOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ventana_cerrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ventana_cerrada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bombillaE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bombillaE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,13 +160,16 @@
   <data name="Ventana_abierta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ventana_abierta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ventana_cerrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ventana_cerrada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SalaOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\SalaOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CocinaOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\CocinaOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sensorA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sensorA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AireA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AireA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sensor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sensor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

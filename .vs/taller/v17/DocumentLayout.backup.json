@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\NickG\\Documents\\Programacion\\uni\\matematica discretas\\Proyecto\\taller\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|D:\\NickG\\Documents\\Programacion\\uni\\matematica discretas\\Proyecto\\taller\\taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|solutionrelative:taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|D:\\NickG\\Documents\\Programacion\\uni\\matematica discretas\\Proyecto\\taller\\taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|solutionrelative:taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|d:\\nickg\\documents\\programacion\\uni\\matematica discretas\\proyecto\\taller\\taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|solutionrelative:taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|d:\\nickg\\documents\\programacion\\uni\\matematica discretas\\proyecto\\taller\\taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{58CFEA1E-F9D8-4A51-8FA1-BD4C49CC5C95}|taller\\taller.csproj|solutionrelative:taller\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +18,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\NickG\\Documents\\Programacion\\uni\\matematica discretas\\Proyecto\\taller\\taller\\Form1.cs",
               "RelativeDocumentMoniker": "taller\\Form1.cs",
               "ToolTip": "D:\\NickG\\Documents\\Programacion\\uni\\matematica discretas\\Proyecto\\taller\\taller\\Form1.cs",
               "RelativeToolTip": "taller\\Form1.cs",
-              "ViewState": "AgIAAP0AAAAAAAAAAAAqwBYBAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAqwF4AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T21:55:50.453Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "D:\\NickG\\Documents\\Programacion\\uni\\matematica discretas\\Proyecto\\taller\\taller\\Form1.cs",
               "RelativeDocumentMoniker": "taller\\Form1.cs",

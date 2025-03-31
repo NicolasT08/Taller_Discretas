@@ -38,6 +38,11 @@ namespace taller
         bool statusAir3 = false;
         bool statusAir4 = false;
 
+        bool statusSen = false;
+        bool statusSen2 = false;
+        bool statusSen3 = false;
+        bool statusSen4 = false;
+
         private void changeGeneral()
         {
             checkBox1.BackgroundImage = Properties.Resources.Puerta_cerrada;
@@ -197,13 +202,13 @@ namespace taller
         {
             statusAir = !statusAir;
 
-            if (!statusAir)
+            if (statusAir)
             {
-                checkBox9.BackgroundImage = Properties.Resources.AireA;
+                checkBox9.BackgroundImage = Properties.Resources.Aire;
             }
             else
             {
-                checkBox9.BackgroundImage = Properties.Resources.Aire;
+                checkBox9.BackgroundImage = Properties.Resources.AireA;
             }
         }
 
@@ -213,11 +218,11 @@ namespace taller
 
             if (!statusAir2)
             {
-                checkBox10.BackgroundImage = Properties.Resources.AireA;
+                checkBox10.BackgroundImage = Properties.Resources.Aire;
             }
             else
             {
-                checkBox10.BackgroundImage = Properties.Resources.Aire;
+                checkBox10.BackgroundImage = Properties.Resources.AireA;
             }
         }
 
@@ -227,11 +232,11 @@ namespace taller
 
             if (!statusAir3)
             {
-                checkBox11.BackgroundImage = Properties.Resources.AireA;
+                checkBox11.BackgroundImage = Properties.Resources.Aire;
             }
             else
             {
-                checkBox11.BackgroundImage = Properties.Resources.Aire;
+                checkBox11.BackgroundImage = Properties.Resources.AireA;
             }
         }
 
@@ -241,11 +246,75 @@ namespace taller
 
             if (!statusAir4)
             {
-                checkBox12.BackgroundImage = Properties.Resources.AireA;
+                checkBox12.BackgroundImage = Properties.Resources.Aire;
             }
             else
             {
-                checkBox12.BackgroundImage = Properties.Resources.Aire;
+                checkBox12.BackgroundImage = Properties.Resources.AireA;
+            }
+        }
+
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            statusSen = !statusSen;
+
+            if (statusSen)
+            {
+                checkBox13.BackgroundImage = Properties.Resources.sensor;
+                pictureBox1.BackgroundImage = Properties.Resources.ComedorR;
+            } else
+            {
+                checkBox13.BackgroundImage = Properties.Resources.sensorA;
+                pictureBox1.BackgroundImage = Properties.Resources.ComedorOff;
+            }
+
+        }
+
+        private void checkBox14_CheckedChanged(object sender, EventArgs e)
+        {
+            statusSen2 = !statusSen2;
+
+            if (statusSen2)
+            {
+                checkBox14.BackgroundImage = Properties.Resources.sensor;
+                pictureBox2.BackgroundImage = Properties.Resources.CocinaR;
+            }
+            else
+            {
+                checkBox14.BackgroundImage = Properties.Resources.sensorA;
+                pictureBox2.BackgroundImage = Properties.Resources.CocinaOff;
+            }
+        }
+
+        private void checkBox15_CheckedChanged(object sender, EventArgs e)
+        {
+            statusSen3 = !statusSen3;
+
+            if (statusSen3)
+            {
+                checkBox15.BackgroundImage = Properties.Resources.sensor;
+                pictureBox3.BackgroundImage = Properties.Resources.HabitacionR;
+            }
+            else
+            {
+                checkBox15.BackgroundImage = Properties.Resources.sensorA;
+                pictureBox3.BackgroundImage = Properties.Resources.HabitacionOff;
+            }
+        }
+
+        private void checkBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            statusSen4 = !statusSen4;
+
+            if (statusSen4)
+            {
+                checkBox16.BackgroundImage = Properties.Resources.sensor;
+                pictureBox4.BackgroundImage = Properties.Resources.SalaR;
+            }
+            else
+            {
+                checkBox16.BackgroundImage = Properties.Resources.sensorA;
+                pictureBox4.BackgroundImage = Properties.Resources.SalaOff;
             }
         }
 
@@ -267,18 +336,65 @@ namespace taller
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            if(trackBar1.Value < 22)
+            label2.Text = trackBar1.Value.ToString();
+            if (trackBar1.Value > 22)
             {
-                changeGeneral();
+                checkBox1.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox2.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox5.BackgroundImage = Properties.Resources.Ventana_cerrada;
                 checkBox9.BackgroundImage = Properties.Resources.Aire;
-                checkBox10.BackgroundImage = Properties.Resources.Aire;
-                checkBox11.BackgroundImage = Properties.Resources.Aire;
-                checkBox12.BackgroundImage = Properties.Resources.Aire;
-                statusAir = false;
-                statusAir2 = false;
-                statusAir3 = false;
-                statusAir4 = false;
+                statusDoor = true;
+                statusDoor2 = true;
+                statusWindows = true;
+                statusAir = true;
             }
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            label3.Text = trackBar2.Value.ToString();
+            if (trackBar2.Value > 22)
+            {
+                checkBox2.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox3.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox6.BackgroundImage = Properties.Resources.Ventana_cerrada;
+                checkBox10.BackgroundImage = Properties.Resources.Aire;
+                statusDoor2 = true;
+                statusDoor3 = true;
+                statusWindows2 = true;
+                statusAir2 = true;
+            }
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            label4.Text = trackBar3.Value.ToString();
+            if (trackBar3.Value > 22)
+            {
+                checkBox3.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox4.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox7.BackgroundImage = Properties.Resources.Ventana_cerrada;
+                checkBox11.BackgroundImage = Properties.Resources.Aire;
+                statusDoor3 = true;
+                statusDoor4 = true;
+                statusWindows3 = true;
+                statusAir3 = true;
+            }
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+            label5.Text = trackBar4.Value.ToString();
+            if (trackBar4.Value > 22)
+            {
+                checkBox4.BackgroundImage = Properties.Resources.Puerta_cerrada;
+                checkBox8.BackgroundImage = Properties.Resources.Ventana_cerrada;
+                checkBox12.BackgroundImage = Properties.Resources.Aire;
+                statusDoor4 = true;
+                statusWindows4 = true;
+                statusAir4 = true;
+            }
+            
         }
 
     }

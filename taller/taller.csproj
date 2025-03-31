@@ -109,6 +109,8 @@
     <Content Include="Images\SalaR.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\sensor.png" />
+    <None Include="Resources\sensorA.png" />
     <None Include="Resources\AireA.png" />
     <None Include="Resources\Aire.png" />
     <None Include="Resources\Ventana_cerrada.png" />
