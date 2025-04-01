@@ -262,11 +262,20 @@ namespace taller
             if (statusSen)
             {
                 checkBox13.BackgroundImage = Properties.Resources.sensor;
-                pictureBox1.BackgroundImage = Properties.Resources.ComedorR;
+                if ( (CountDay <= 6 || CountDay >= 18) )
+                {
+                    pictureBox1.BackgroundImage = Properties.Resources.ComedorR;
+                    
+                }
+                
             } else
             {
                 checkBox13.BackgroundImage = Properties.Resources.sensorA;
-                pictureBox1.BackgroundImage = Properties.Resources.ComedorOff;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox1.BackgroundImage = Properties.Resources.ComedorOff;
+
+                }
             }
 
         }
@@ -278,12 +287,18 @@ namespace taller
             if (statusSen2)
             {
                 checkBox14.BackgroundImage = Properties.Resources.sensor;
-                pictureBox2.BackgroundImage = Properties.Resources.CocinaR;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox2.BackgroundImage = Properties.Resources.CocinaR;
+                }
             }
             else
             {
                 checkBox14.BackgroundImage = Properties.Resources.sensorA;
-                pictureBox2.BackgroundImage = Properties.Resources.CocinaOff;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox2.BackgroundImage = Properties.Resources.CocinaOff;
+                }
             }
         }
 
@@ -294,12 +309,19 @@ namespace taller
             if (statusSen3)
             {
                 checkBox15.BackgroundImage = Properties.Resources.sensor;
-                pictureBox3.BackgroundImage = Properties.Resources.HabitacionR;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox3.BackgroundImage = Properties.Resources.HabitacionR;
+                }
+
             }
             else
             {
                 checkBox15.BackgroundImage = Properties.Resources.sensorA;
-                pictureBox3.BackgroundImage = Properties.Resources.HabitacionOff;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox3.BackgroundImage = Properties.Resources.HabitacionOff;
+                }
             }
         }
 
@@ -310,12 +332,19 @@ namespace taller
             if (statusSen4)
             {
                 checkBox16.BackgroundImage = Properties.Resources.sensor;
-                pictureBox4.BackgroundImage = Properties.Resources.SalaR;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox4.BackgroundImage = Properties.Resources.SalaR;
+
+                }
             }
             else
             {
                 checkBox16.BackgroundImage = Properties.Resources.sensorA;
-                pictureBox4.BackgroundImage = Properties.Resources.SalaOff;
+                if ((CountDay <= 6 || CountDay >= 18))
+                {
+                    pictureBox4.BackgroundImage = Properties.Resources.SalaOff;
+                }
             }
         }
 
@@ -329,74 +358,73 @@ namespace taller
                 CountDay = 0;
             }
 
-            if (CountDay <= 0 || CountDay >= 18)
-            {
-                changeGeneral();
-            }
             ActualizarTablaVerdad();
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label2.Text = trackBar1.Value.ToString();
-            if (trackBar1.Value > 22)
+
+            if ( (trackBar1.Value > 22) && (statusDoor == true) && (statusDoor2 == true) && (statusWindows == true) )
             {
-                checkBox1.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox2.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox5.BackgroundImage = Properties.Resources.Ventana_cerrada;
                 checkBox9.BackgroundImage = Properties.Resources.Aire;
-                statusDoor = true;
-                statusDoor2 = true;
-                statusWindows = true;
                 statusAir = true;
             }
+            if ( trackBar1.Value < 22)
+            {
+                checkBox9.BackgroundImage = Properties.Resources.AireA;
+                statusAir = false;
+            }
         }
+
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             label3.Text = trackBar2.Value.ToString();
-            if (trackBar2.Value > 22)
+
+            if ((trackBar2.Value > 22) && (statusDoor2 == true) && (statusDoor3 == true) && (statusWindows2 == true))
             {
-                checkBox2.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox3.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox6.BackgroundImage = Properties.Resources.Ventana_cerrada;
                 checkBox10.BackgroundImage = Properties.Resources.Aire;
-                statusDoor2 = true;
-                statusDoor3 = true;
-                statusWindows2 = true;
                 statusAir2 = true;
             }
+            if (trackBar2.Value < 22)
+            {
+                checkBox10.BackgroundImage = Properties.Resources.AireA;
+                statusAir2 = false;
+            }
+
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
             label4.Text = trackBar3.Value.ToString();
-            if (trackBar3.Value > 22)
+
+            if ((trackBar3.Value > 22) && (statusDoor3 == true) && (statusDoor4 == true) && (statusWindows3 == true))
             {
-                checkBox3.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox4.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox7.BackgroundImage = Properties.Resources.Ventana_cerrada;
                 checkBox11.BackgroundImage = Properties.Resources.Aire;
-                statusDoor3 = true;
-                statusDoor4 = true;
-                statusWindows3 = true;
                 statusAir3 = true;
+            }
+            if (trackBar3.Value < 22)
+            {
+                checkBox11.BackgroundImage = Properties.Resources.AireA;
+                statusAir3 = false;
             }
         }
 
         private void trackBar4_Scroll(object sender, EventArgs e)
         {
             label5.Text = trackBar4.Value.ToString();
-            if (trackBar4.Value > 22)
+
+            if ((trackBar3.Value > 22) && (statusDoor4 == true) && (statusWindows4 == true))
             {
-                checkBox4.BackgroundImage = Properties.Resources.Puerta_cerrada;
-                checkBox8.BackgroundImage = Properties.Resources.Ventana_cerrada;
                 checkBox12.BackgroundImage = Properties.Resources.Aire;
-                statusDoor4 = true;
-                statusWindows4 = true;
                 statusAir4 = true;
             }
-            
+            if (trackBar3.Value < 22)
+            {
+                checkBox12.BackgroundImage = Properties.Resources.AireA;
+                statusAir4 = false;
+            }
         }
 
         private void InicializarTablaVerdad()
