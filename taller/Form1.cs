@@ -17,6 +17,7 @@ namespace taller
         {
             InitializeComponent();
             timer1.Start();
+            InicializarTablaVerdad();
 
         }
 
@@ -332,6 +333,7 @@ namespace taller
             {
                 changeGeneral();
             }
+            ActualizarTablaVerdad();
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -395,6 +397,56 @@ namespace taller
                 statusAir4 = true;
             }
             
+        }
+
+        private void InicializarTablaVerdad()
+        {
+            DataTable tabla = new DataTable();
+
+            // Columnas generales
+            tabla.Columns.Add("Zona", typeof(string));          // Nombre de la habitación
+            tabla.Columns.Add("Hora_6PM_6AM", typeof(bool));    // True si está entre 6PM y 6AM
+            tabla.Columns.Add("Presencia", typeof(bool));       // Sensor de presencia
+            tabla.Columns.Add("Temp_Sup_22C", typeof(bool));    // Temperatura > 22°C
+            tabla.Columns.Add("Ventana_Cerrada", typeof(bool)); // Estado ventana
+            tabla.Columns.Add("Puerta_Cerrada", typeof(bool));  // Estado puerta
+            tabla.Columns.Add("Luz_Encendida", typeof(bool));   // Resultado iluminación
+            tabla.Columns.Add("AC_Activo", typeof(bool));       // Resultado aire acondicionado
+
+            dataGridView1.DataSource = tabla;
+        }
+
+        private void ActualizarTablaVerdad()
+        {
+            DataTable tabla = (DataTable)dataGridView1.DataSource;
+            tabla.Rows.Clear(); // Limpiar filas existentes
+
+            // Estado general de la hora
+            bool hora = (CountDay >= 18 || CountDay <= 6); // 6PM a 6AM
+
+            // Arrays para mapear los datos de cada habitación
+            string[] zonas = { "Comedor", "Cocina", "Habitación", "Sala" };
+            bool[] presencias = { statusSen, statusSen2, statusSen3, statusSen4 };
+            int[] temperaturas = { trackBar1.Value, trackBar2.Value, trackBar3.Value, trackBar4.Value };
+            bool[] ventanas = { statusWindows, statusWindows2, statusWindows3, statusWindows4 };
+            bool[] puertas = { statusDoor, statusDoor2, statusDoor3, statusDoor4 };
+
+            // Llenar la tabla para cada habitación
+            for (int i = 0; i < zonas.Length; i++)
+            {
+                // Entradas
+                bool presencia = presencias[i];
+                bool tempSup22 = (temperaturas[i] > 22);
+                bool ventanaCerrada = ventanas[i];
+                bool puertaCerrada = puertas[i];
+
+                // Salidas según reglas
+                bool luzEncendida = hora && presencia; // Regla 1: Luz si 6PM-6AM y hay presencia
+                bool acActivo = tempSup22 && ventanaCerrada && puertaCerrada; // Regla 2: AC si T > 22°C y todo cerrado
+
+                // Agregar fila para esta habitación
+                tabla.Rows.Add(zonas[i], hora, presencia, tempSup22, ventanaCerrada, puertaCerrada, luzEncendida, acActivo);
+            }
         }
 
     }

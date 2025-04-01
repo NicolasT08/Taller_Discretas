@@ -117,7 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label7.Text" xml:space="preserve">
+    <value>La segunda proposicion es el control de temperatura:
+- Sea T la temperatura superior a 22 grados
+- Sea V si la ventana esta cerrada
+- Sea D si la puerta esta cerrada
+- Sea A si el aire acondicionado esta activo
+
+Entonces la proposicion es:
+T ^ V ^ D -&gt; A</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>La primera proposicion es el control de la iluminacion:
+- Sea H la hora dada [6.00 pm, 6.00 am]
+- Sea P el sensor de presencia
+- Sea L la luz esta ensendida
+
+Entonces la proposicion es:
+ H ^ P -&gt; L
+</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>46</value>
   </metadata>
 </root>
