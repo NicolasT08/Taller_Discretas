@@ -18,6 +18,7 @@ namespace taller
             InitializeComponent();
             timer1.Start();
             InicializarTablaVerdad();
+            InicializarTablaCombinaciones();
 
         }
 
@@ -475,6 +476,83 @@ namespace taller
                 // Agregar fila para esta habitación
                 tabla.Rows.Add(zonas[i], hora, presencia, tempSup22, ventanaCerrada, puertaCerrada, luzEncendida, acActivo);
             }
+        }
+
+        private void InicializarTablaCombinaciones()
+        {
+            DataTable tabla = new DataTable();
+
+            // Input columns
+            tabla.Columns.Add("H (6PM-6AM)", typeof(bool));
+            tabla.Columns.Add("P (Presence)", typeof(bool));
+            tabla.Columns.Add("T (>22°C)", typeof(bool));
+            tabla.Columns.Add("V (Window Closed)", typeof(bool));
+            tabla.Columns.Add("D (Door Closed)", typeof(bool));
+            // Output columns
+            tabla.Columns.Add("L (Light On)", typeof(bool));
+            tabla.Columns.Add("A (AC On)", typeof(bool));
+
+            // Strings para almacenar las expresiones SOP y POS
+            string sopL = "L (SOP) = ";
+            string sopA = "A (SOP) = ";
+            string posL = "L (POS) = ";
+            string posA = "A (POS) = ";
+            bool firstSopL = true, firstSopA = true, firstPosL = true, firstPosA = true;
+
+            // Generate all 32 combinations
+            for (int i = 0; i < 32; i++)
+            {
+                bool h = (i & 16) > 0; // Bit 4
+                bool p = (i & 8) > 0;  // Bit 3
+                bool t = (i & 4) > 0;  // Bit 2
+                bool v = (i & 2) > 0;  // Bit 1
+                bool d = (i & 1) > 0;  // Bit 0
+
+                // Apply rules
+                bool l = h && p;       // Rule 1: Light on if 6PM-6AM and presence
+                bool a = t && v && d;  // Rule 2: AC on if T > 22°C and window/door closed
+
+                // Agregar fila a la tabla
+                tabla.Rows.Add(h, p, t, v, d, l, a);
+
+                // Construir SOP para L
+                if (l)
+                {
+                    if (!firstSopL) sopL += " + ";
+                    sopL += $"({(h ? "H" : "¬H")}{(p ? "P" : "¬P")}{(t ? "T" : "¬T")}{(v ? "V" : "¬V")}{(d ? "D" : "¬D")})";
+                    firstSopL = false;
+                }
+
+                // Construir SOP para A
+                if (a)
+                {
+                    if (!firstSopA) sopA += " + ";
+                    sopA += $"({(h ? "H" : "¬H")}{(p ? "P" : "¬P")}{(t ? "T" : "¬T")}{(v ? "V" : "¬V")}{(d ? "D" : "¬D")})";
+                    firstSopA = false;
+                }
+
+                // Construir POS para L
+                if (!l)
+                {
+                    if (!firstPosL) posL += "";
+                    posL += $"({(h ? "¬H" : "H")}+{(p ? "¬P" : "P")}+{(t ? "¬T" : "T")}+{(v ? "¬V" : "V")}+{(d ? "¬D" : "D")})";
+                    firstPosL = false;
+                }
+
+                // Construir POS para A
+                if (!a)
+                {
+                    if (!firstPosA) posA += "";
+                    posA += $"({(h ? "¬H" : "H")}+{(p ? "¬P" : "P")}+{(t ? "¬T" : "T")}+{(v ? "¬V" : "V")}+{(d ? "¬D" : "D")})";
+                    firstPosA = false;
+                }
+            }
+
+            dataGridView2.DataSource = tabla;
+
+            // Mostrar las expresiones en etiquetas (asegúrate de tener label6 y label7 en tu formulario)
+            label10.Text = sopL + "\n" + sopA;  // SOP en label6
+            label13.Text = posL + "\n" + posA;  // POS en label7
         }
 
     }

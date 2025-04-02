@@ -118,29 +118,59 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label7.Text" xml:space="preserve">
-    <value>La segunda proposicion es el control de temperatura:
+    <value>AC_ACTIVO
+
+La segunda proposicion es el control de temperatura:
 - Sea T la temperatura superior a 22 grados
 - Sea V si la ventana esta cerrada
 - Sea D si la puerta esta cerrada
 - Sea A si el aire acondicionado esta activo
 
 Entonces la proposicion es:
-T ^ V ^ D -&gt; A</value>
+T ^ V ^ D -&gt; A
+
+Si la temperatura en una habitación supera los 22°C y las puertas y ventanas están cerradas,
+el aire acondicionado debe activarse.</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>La primera proposicion es el control de la iluminacion:
+    <value>LUZ_ENCENDIDA
+
+La primera proposicion es el control de la iluminacion:
 - Sea H la hora dada [6.00 pm, 6.00 am]
 - Sea P el sensor de presencia
 - Sea L la luz esta ensendida
 
 Entonces la proposicion es:
  H ^ P -&gt; L
+
+Si la hora está entre las 6:00 PM y las 6:00 AM y el sensor
+de presencia detecta movimiento,la luz debe 
+encenderse automáticamente.
+</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Ya que tenemos dos proposiciones:
+- Aire acondicionado encendido
+- Luz encendida
+
+Las dos tienen pocas salidas en uno (verdadero) asi que usaremos suma de productos ya
+que nos saldra una preposicion mucho mas corta.
+
+SUMA DE PRODUCTOS:
 </value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Esta tabla muestra es estado de los elementos en cada habitacion.
+Responde a cualquier cambio hecho en la interfaz y lo mas importante, valida
+las proposiciones principales en tiempo real.
+
+En un principio todo esta en falso, asi que el ingeniero tiene que interactuar en el
+diseno y cambiar cosas para ver el funcionamiento de la tabla.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>46</value>
+    <value>25</value>
   </metadata>
 </root>
